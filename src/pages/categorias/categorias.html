@@ -8,5 +8,12 @@
 
 
 <ion-content padding>
-
+  <h3 text-center>Selecione suas metas</h3>
+  <ion-list>
+    <button ion-item *ngFor="let categoriaMeta of metaCollection">
+      <ion-icon [name]="categoriaMeta.icon" item-left></ion-icon>
+      <h2>{{ categoriaMeta.categoria | uppercase }} </h2>
+      <p>{{ categoriaMeta.metas.length }} metas</p>
+    </button>
+  </ion-list>
 </ion-content>
