@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Meta } from "../../data/meta.interface";
+import metas from '../../data/metas';
 
-/*
-  Generated class for the Categorias page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-categorias',
   templateUrl: 'categorias.html'
 })
-export class CategoriasPage {
+export class CategoriasPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  metaCollection: { categoria: string, metas: Meta[], icon: string }[];
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoriasPage');
+  ngOnInit() {
+    this.metaCollection = metas;  
   }
 
 }
