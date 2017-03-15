@@ -1,22 +1,29 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { NavParams } from 'ionic-angular';
+import { Meta } from "../../data/meta.interface";
 
-/*
-  Generated class for the Metas page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-metas',
   templateUrl: 'metas.html'
 })
-export class MetasPage {
+export class MetasPage implements OnInit{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  categoriaMetas: { categoria: string, metas: Meta[], icon: string };
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MetasPage');
+  constructor(private navParams: NavParams) {
+
   }
 
+  ngOnInit() {
+    console.log("categoria = " +this.navParams.data);
+    this.categoriaMetas = this.navParams.data;
+    console.log("categoriaMetas = " + this.categoriaMetas.categoria);
+    console.log("metas= " + this.categoriaMetas.metas);
+
+  }
+
+  //ionViewDidLoad() {
+  //  this.categoriaMetas = this.navParams.data;
+  //}
+  //É preciso adicionar o Elvis operator ? para usar essa abordagem
 }
