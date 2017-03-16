@@ -15,15 +15,19 @@ export class MetasPage implements OnInit{
   }
 
   ngOnInit() {
-    console.log("categoria = " +this.navParams.data);
     this.categoriaMetas = this.navParams.data;
-    console.log("categoriaMetas = " + this.categoriaMetas.categoria);
-    console.log("metas= " + this.categoriaMetas.metas);
-
   }
 
   //ionViewDidLoad() {
   //  this.categoriaMetas = this.navParams.data;
   //}
   //É preciso adicionar o Elvis operator ? para usar essa abordagem
+
+  onSeleciona(meta: Meta) {
+
+
+    
+  }
+
+
 }
