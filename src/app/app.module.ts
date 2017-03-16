@@ -7,6 +7,7 @@ import { MetaPage } from "../pages/meta/meta";
 import { CompromissoPage } from "../pages/compromisso/compromisso";
 import { ConfiguracaoPage } from "../pages/configuracao/configuracao";
 import { TabsPage } from "../pages/tabs/tabs";
+import { MetasService } from "../services/metas";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,9 @@ import { TabsPage } from "../pages/tabs/tabs";
     ConfiguracaoPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MetasService
+  ]
 })
 export class AppModule {}
