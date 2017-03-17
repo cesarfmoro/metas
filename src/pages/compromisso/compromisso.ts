@@ -29,6 +29,12 @@ export class CompromissoPage {
   onViewMeta(meta: Meta) {
     const modal = this.modalCtrl.create(MetaPage);
     modal.present();
+    modal.onDidDismiss((remove: boolean) => {
+      if (remove) {
+        this.metaService.removeSelecaoMeta(meta);
+        this.metas=this.metaService.getMetasSelecionadas();
+      }
+    });
   }
 
 }

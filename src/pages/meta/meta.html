@@ -17,10 +17,12 @@
         <button ion-button 
         small 
         outline 
-        color="danger">Remove da seleção</button>
+        color="danger"
+        (click)="onClose(true)">Remove da seleção
+        </button>
       </ion-col>
     </ion-row>
   </ion-card>
-  <button ion-button color="danger">Fechar</button>
+  <button ion-button color="danger" (click)="onClose()" >Fechar</button>
 
 </ion-content>
