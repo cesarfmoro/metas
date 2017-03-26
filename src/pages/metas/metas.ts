@@ -25,10 +25,13 @@ export class MetasPage implements OnInit{
   //É preciso adicionar o Elvis operator ? para usar essa abordagem
 
   onSeleciona(meta: Meta) {
+
+    let msg: string = 'Tem certeza que quer selecionar essa meta do ' + meta.autor + '?';
+    
     const alert = this.alertCtrl.create({
       title: 'Seleciona Meta',
       subTitle: 'Confirmação',
-      message: 'Tem certeza que quer selecionar essa meta?',
+      message: msg,
       buttons: [{
         text: "Sim",
         handler: () => {
